@@ -53,7 +53,7 @@
         Enter email addresses for others you'd like to collaborate with you. These users will have full access to your account. They can log in using Mozilla Persona.
       </p>
       <div class="controls">
-        <?php for($i=0; $i<10; $i++) { ?>
+        <?php for($i=0; $i<count(array_filter($admins)) + 2; $i++) { ?>
           <input type="text" name="admins[<?php echo $i; ?>]" <?php if(isset($admins[$i])) { ?> value="<?php $this->utility->safe($admins[$i]); ?>" <?php } ?> placeholder="user<?php echo ($i+1); ?>@example.com">
         <?php } ?>
       </div>
